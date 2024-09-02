@@ -1,578 +1,349 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Coso HTML Template | Homepage</title>
-<!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/main.css" rel="stylesheet">
-<link href="css/responsive.css" rel="stylesheet">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <title>canvas生日快乐动画特效 www.bootstrapmb.co</title>
 
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <style>
+        html,body{
+            margin:0px;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+            background:linear-gradient(to left top,blue,pink);
+        }
+    </style>
+   
 </head>
-
 <body>
+<audio loop="loop" id="audios">
+    <source src="happy-birthday.mp3" type="audio/mp3" />
+</audio>
+<canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888" ></canvas>
+<canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas" onClick="play()"></canvas>
+<div class="overlay" >
+    <div class="tabs">
+        <div class="tabs-labels"><span class="tabs-label"></span><span class="tabs-label"></span><span class="tabs-label"></span></div>
 
-<div class="page-wrapper">
- 	
-    <!-- Preloader -->
-    <div class="preloader"></div>
- 	
-    <!-- Main Header-->
-    <header class="main-header header-style-one">
-    	
-    	<!--Header-Upper-->
-        <div class="header-upper">
-        	<div class="auto-container">
-            	<div class="clearfix">
-                	
-                	<div class="pull-left logo-box clearfix">
-						<!-- Nav Toggler -->
-						<div class="sidebar-btn hidden-bar-opener"><div class="nav-btn"></span></div></div>
-						<!-- Logo -->
-                    	<div class="logo"><a href="index.html"><img src="images/logo.png" alt="" title=""></a></div>
-                    </div>
-                   	
-                   	<div class="nav-outer clearfix">
-                    
-						<!-- Main Menu -->
-						<nav class="main-menu navbar-expand-md">
-							<div class="navbar-header">
-								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>
-
-							<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-								<ul class="navigation clearfix">
-									<li class="current dropdown"><a href="index.html">开始</a>
-									</li>
-									
-									<li class="dropdown"><a href="#">大头像</a>
-										<ul>
-											<li><a href="portfolio.html">Portfolio 01</a></li>
-										</ul>
-									</li>
-
-									
-								</ul>
-							</div>
-							
-						</nav>
-						
-
-						
-					</div>
-                   
-                </div>
-            </div>
+        <div class="tabs-panels">
+            <ul class="tabs-panel commands">
+            </ul>
         </div>
-        <!--End Header Upper-->
-        
-    </header>
-    <!--End Main Header -->
-	
-	<!-- Hidden Navigation Bar -->
-    <section class="hidden-bar right-align">
-        
-        <div class="hidden-bar-closer">
-            <button><span class="fas fa-times-circle"></span></button>
-        </div>
-        
-        <!-- Hidden Bar Wrapper -->
-        <div class="hidden-bar-wrapper">
-            
-            <div class="logo">
-            	<a href="index.html"><img src="images/logo-3.png" alt="" /></a>
-            </div>
-            <div class="content-box">
-            	<h2>About Us</h2>
-                <div class="text">Lorem ipsum, or lipsum as it is sometimes the known, is dummy text used in laying out print, graphic or web designs Lorem ipsum, or lipsum as it is sometimes the known, is dummy text used in laying out print.</div>
-                <a href="contact.html" class="theme-btn btn-style-one"><span class="txt">Consultation</span></a>
-            </div>
-            <div class="contact-info">
-            	<h2>Contact Info</h2>
-                <ul class="list-style-one">
-                	<li><span class="icon fas fa-map-marker"></span>Rock St 12, Newyork City, USA</li>
-                    <li><span class="icon fas fa-phone"></span>(000) 000-000-0000</li>
-                    <li><span class="icon fas fa-envelope"></span>Coso@gmail.com</li>
-                    <li><span class="icon fas fa-clock"></span>Week Days: 09.00 to 18.00 Sunday: Closed</li>
-                </ul>
-            </div>
-        </div><!-- / Hidden Bar Wrapper -->
-        
-    </section>
-    <!-- End / Hidden Bar -->
-
-
-
-	
-	<!--Banner Section-->
-    <section class="banner-section">
-		<div class="patern-layer-one" style="background-image: url(images/main-slider/pattern-1.png)"></div>
-		<div class="patern-layer-two" style="background-image: url(images/main-slider/content-image-1.png)"></div>
-		<div class="circle-layer-one"></div>
-		<div class="circle-layer-two"></div>
-		<div class="brand">Happy<span>g</span></div>
-		<!-- Icons -->
-		<div class="icons parallax-scene-1">
-			<!-- Icon One -->
-			<div data-depth="0.20" class="icon-one parallax-layer" style="background-image:url(images/main-slider/icon-1.png)"></div>
-			<div data-depth="0.20" class="icon-two parallax-layer" style="background-image:url(images/main-slider/icon-3.png)"></div>
-			<div data-depth="0.20" class="icon-three parallax-layer" style="background-image:url(images/main-slider/icon-4.png)"></div>
-			<div data-depth="0.20" class="icon-four parallax-layer" style="background-image:url(images/main-slider/icon-5.png)"></div>
-			<div data-depth="0.20" class="icon-five parallax-layer"></div>
-		</div>
-		
-		<div class="auto-container">
-			<div class="row clearfix">
-				<!-- Image Column -->
-				<div class="image-column col-lg-5 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<figure class="image titlt" data-tilt data-tilt-max="4">
-							<img src="images/main-slider/5eaaaa14ad89b60004c4c7ae.png" alt="">
-						</figure>
-					</div>
-				</div>
-				<!-- Content Column -->
-				<div class="content-column col-lg-7 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<div class="big-text">coso</div>
-						<h1>Happy Birthday <br> ZXY <br> Today</h1>
-						<a href="#" class="theme-btn btn-style-two"><span class="txt">日常幸福女孩？！</span></a>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-		
-		<!-- Journey Box -->
-		<div class="journey-box" style="background-image: url(images/background/pattern-2.png)">
-			<h2>Start your journey <br> today.</h2>
-			<div class="text">We help to create brands and products for today and tomorrow</div>
-			<a href="#" class="theme-btn go-btn">Go <span class="arrow"><img src="images/icons/right-arrow.png" alt="" /></span></a>
-		</div>
-		
-	</section>
-	<!--End Banner Section-->
-	
-	<!-- Branding Section -->
-	<section class="branding-section">
-		<div class="auto-container">
-			<!-- Sec Title -->
-			<div class="sec-title centered">
-				<div class="title">幸福女孩到此一游？</div>
-				<h2>美丽，聪明，大方 </h2>
-			</div>
-			<div class="row clearfix">
-				
-				<!-- Blocks Column -->
-				<div class="blocks-column col-lg-6 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<div class="row clearfix">
-							
-							<!-- Brand Block -->
-							<div class="brand-block col-lg-6 col-md-6 col-sm-12">
-								<div class="inner-box">
-									<div class="icon-box">
-										<span class="icon fas fa-align-left"></span>
-									</div>
-									<h5><a href="service-detail.html">Creative barnding</a></h5>
-									<ul class="brand-list">
-										<li>坐标 上古名城 北京</li>
-										<li>石头缝里蹦出来的e</li>
-									</ul>
-								</div>
-							</div>
-							
-							<!-- Brand Block -->
-							<div class="brand-block col-lg-6 col-md-6 col-sm-12">
-								<div class="inner-box">
-									<div class="icon-box">
-										<span class="icon fas fa-check-double"></span>
-									</div>
-									<h5><a href="service-detail.html">Performance Content</a></h5>
-									<ul class="brand-list">
-										<li>End-to-End Digital Media & Commerce</li>
-										<li>End Digital Media & Commerce</li>
-									</ul>
-								</div>
-							</div>
-							
-							<!-- Brand Block -->
-							<div class="brand-block col-lg-6 col-md-6 col-sm-12">
-								<div class="inner-box">
-									<div class="icon-box">
-										<span class="icon fas fa-chart-line"></span>
-									</div>
-									<h5><a href="service-detail.html">Planning & Insights</a></h5>
-									<ul class="brand-list">
-										<li>End-to-End Digital Media & Commerce</li>
-										<li>End Digital Media & Commerce</li>
-									</ul>
-								</div>
-							</div>
-							
-							<!-- Brand Block -->
-							<div class="brand-block col-lg-6 col-md-6 col-sm-12">
-								<div class="inner-box">
-									<div class="icon-box">
-										<span class="icon fas fa-chart-bar"></span>
-									</div>
-									<h5><a href="service-detail.html">Analytics & Technology</a></h5>
-									<ul class="brand-list">
-										<li>End-to-End Digital Media & Commerce</li>
-										<li>End Digital Media & Commerce</li>
-									</ul>
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				
-				<!-- Images Column -->
-				<div class="images-column col-lg-6 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<div class="image"><img src="images/resource/brand-1.jpg" alt="" /></div>
-						<div class="image-two"><img src="images/resource/brand-2.png" alt="" /></div>
-						<div class="image-three"><img src="images/resource/brand-3.jpg" alt="" /></div>
-						<div class="image-four"><img src="images/resource/brand-4.jpg" alt="" /></div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</section>
-	<!-- End Branding Section -->
-
-	
-	<!-- Business Section -->
-	<section class="business-section">
-		<div class="auto-container">
-			<div class="row clearfix">
-				
-				<!-- Image Column -->
-				<div class="image-column col-lg-6 col-md-12 col-sm-12">
-					<div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="pattern-layer" style="background-image: url(images/background/pattern-3.png)"></div>
-						<div class="image titlt" data-tilt data-tilt-max="4">
-							<img src="images/resource/business.png" alt="" />
-						</div>
-					</div>
-				</div>
-				
-				<!-- Content Column -->
-				<div class="content-column col-lg-6 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<!-- Sec Title -->
-						<div class="sec-title">
-							<div class="title">Collaborate better</div>
-							<h2>Effective tools for  business administration</h2>
-						</div>
-						
-						<div class="blocks-outer">
-							
-							<!-- Business Block -->
-							<div class="business-block">
-								<div class="inner-box">
-									<div class="upper-box">
-										<div class="icon"><img src="images/icons/business-1.png" alt="" /></div>
-										<h5>Note that Important Stuff</h5>
-									</div>
-									<div class="text">Access Google’s unique insights and machine learning capabilities to help get the most out of your data.</div>
-								</div>
-							</div>
-							
-							<!-- Business Block -->
-							<div class="business-block">
-								<div class="inner-box">
-									<div class="upper-box">
-										<div class="icon"><img src="images/icons/business-2.png" alt="" /></div>
-										<h5>Manage Users with Life State</h5>
-									</div>
-									<div class="text">Access Google’s unique insights and machine learning capabilities to help get the most out of your data.</div>
-								</div>
-							</div>
-							
-							<!-- Business Block -->
-							<div class="business-block">
-								<div class="inner-box">
-									<div class="upper-box">
-										<div class="icon"><img src="images/icons/business-3.png" alt="" /></div>
-										<h5>Assign tasks & track progress</h5>
-									</div>
-									<div class="text">Access Google’s unique insights and machine learning capabilities to help get the most out of your data.</div>
-								</div>
-							</div>
-							
-						</div>
-						
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</section>
-	<!-- End Business Section -->
-	
-	<!-- Strategy Section -->
-	<section class="strategy-section">
-		<div class="icon-one" style="background-image: url(images/icons/strategy-icons.png)"></div>
-		<div class="pattern-one" style="background-image: url(images/background/pattern-4.png)"></div>
-		<div class="auto-container">
-			<div class="row clearfix">
-				
-				<!-- Content Column -->
-				<div class="content-column col-lg-6 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<!-- Sec Title -->
-						<div class="sec-title">
-							<div class="title">Brand Strategy / Brand</div>
-							<h2>New leadership, fresh <br> ambition</h2>
-							<div class="text">new markets, new cultures, merger and acquisition, diversification <br> we help to build brands from the inside out.</div>
-						</div>
-						<a href="portfolio.html" class="theme-btn btn-style-three"><span class="txt">Find More Project</span></a>
-					</div>
-				</div>
-				
-				<!-- Images Column -->
-				<div class="images-column col-lg-6 col-md-12 col-sm-12">
-					<div class="pattern-two" style="background-image: url(images/background/pattern-5.png)"></div>
-					<div class="inner-column">
-						<div class="image"><img src="images/resource/strategy-1.jpg" alt="" /></div>
-						<div class="image-two"><img src="images/resource/strategy-2.jpg" alt="" /></div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</section>
-	<!-- End Strategy Section -->
-
-
-	<!-- Portfolio Block -->
-	<section class="portfolio-block">
-		<div class="auto-container">
-			<div class="row clearfix">
-				
-				<!-- Image Column -->
-				<div class="image-column col-lg-5 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<div class="image-outer wow rollIn">
-							<div class="image">
-								<img src="images/gallery/3.jpg" alt="" />
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Content Column -->
-				<div class="content-column col-lg-7 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<h2><a href="portfolio-single.html">Moments Matter Event Studio</a></h2>
-						<div class="text">Duis consectetur feugiat auctor. Morbi nec enim luctus, feugiat arcu id, ultricies ante. Duis vel massa eleifend, porta est non, feugiat metus.</div>
-						<a href="portfolio-single.html" class="detail">See Details</a>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</section>
-	<!-- End Portfolio Block -->
-
-	<!-- Portfolio Block -->
-	<section class="portfolio-block">
-		<div class="auto-container">
-			<div class="row clearfix">
-				
-				<!-- Image Column -->
-				<div class="image-column col-lg-5 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<div class="image-outer wow rollIn">
-							<div class="image">
-								<img src="images/gallery/3.jpg" alt="" />
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Content Column -->
-				<div class="content-column col-lg-7 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<h2><a href="portfolio-single.html">Moments Matter Event Studio</a></h2>
-						<div class="text">Duis consectetur feugiat auctor. Morbi nec enim luctus, feugiat arcu id, ultricies ante. Duis vel massa eleifend, porta est non, feugiat metus.</div>
-						<a href="portfolio-single.html" class="detail">See Details</a>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</section>
-	<!-- End Portfolio Block -->
-
-
-	<!-- Portfolio Block -->
-	<section class="portfolio-block">
-		<div class="auto-container">
-			<div class="row clearfix">
-				
-				<!-- Image Column -->
-				<div class="image-column col-lg-5 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<div class="image-outer wow rollIn">
-							<div class="image">
-								<img src="images/gallery/3.jpg" alt="" />
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Content Column -->
-				<div class="content-column col-lg-7 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<h2><a href="portfolio-single.html">Moments Matter Event Studio</a></h2>
-						<div class="text">Duis consectetur feugiat auctor. Morbi nec enim luctus, feugiat arcu id, ultricies ante. Duis vel massa eleifend, porta est non, feugiat metus.</div>
-						<a href="portfolio-single.html" class="detail">See Details</a>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</section>
-	<!-- End Portfolio Block -->
-
-	<!-- Portfolio Block -->
-	<section class="portfolio-block">
-		<div class="auto-container">
-			<div class="row clearfix">
-				
-				<!-- Image Column -->
-				<div class="image-column col-lg-5 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<div class="image-outer wow rollIn">
-							<div class="image">
-								<img src="images/gallery/3.jpg" alt="" />
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Content Column -->
-				<div class="content-column col-lg-7 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<h2><a href="portfolio-single.html">Moments Matter Event Studio</a></h2>
-						<div class="text">Duis consectetur feugiat auctor. Morbi nec enim luctus, feugiat arcu id, ultricies ante. Duis vel massa eleifend, porta est non, feugiat metus.</div>
-						<a href="portfolio-single.html" class="detail">See Details</a>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</section>
-	<!-- End Portfolio Block -->
-	
-
-
-	
-	<!-- Clients Section -->
-    <section class="clients-section">
-        <div class="auto-container">
-            <div class="inner-container">
-				<div class="sponsors-outer">
-					<!-- Sponsors Carousel -->
-					<ul class="sponsors-carousel owl-carousel owl-theme">
-						<li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure></li>
-						<li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure></li>
-						<li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure></li>
-						<li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure></li>
-						<li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></figure></li>
-						<li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure></li>
-						<li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure></li>
-						<li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure></li>
-					</ul>
-				</div>
-            </div>
-        </div>
-    </section>
-    <!-- End Clients Section -->
-	
-
-	
+    </div>
 </div>
-<!--End pagewrapper-->
+<script>
+    window.onload = function () {
+        init(1);
+        play();
+    }
 
-	<!-- Banner Section Two -->
-	<section class="banner-section-two">
-		<div class="patern-layer-one" style="background-image: url(images/main-slider/pattern-2.png)"></div>
-		<div class="circle-layer-one"></div>
-		<div class="circle-layer-two"></div>
-		<div class="circle-layer-three"></div>
-		<div class="brand">Digital</div>
-		<div class="business">Business</div>
-		<!-- Icons -->
-		<div class="icons parallax-scene-1">
-			<!-- Icon One -->
-			<div data-depth="0.20" class="icon-one parallax-layer" style="background-image:url(images/main-slider/icon-1.png)"></div>
-			<div data-depth="0.20" class="icon-two parallax-layer"></div>
-		</div>
-		
-		<div class="auto-container">
-			<div class="row clearfix">
-				<!-- Content Column -->
-				<div class="content-column col-lg-7 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<h1>We are digital business agency Develop engaged</h1>
-						<a href="#" class="theme-btn btn-style-three"><span class="txt">Digital Business</span></a>
-					</div>
-				</div>
-				<!-- Image Column -->
-				<div class="image-column col-lg-5 col-md-12 col-sm-12">
-					<div class="inner-column">
-						<figure class="image titlt" data-tilt data-tilt-max="4">
-							<img src="images/main-slider/image-2.png" alt="">
-						</figure>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-		
-	</section>
-	<!-- End Banner Section Two -->
+    function play() {
+        var audio = document.getElementById('audios');
+        if (audio.paused) {
+            init(0);
+            audio.play();
+            frame();
+        }
+    }
+
+    function initVars(){
+        pi=Math.PI;
+        ctx=canvas.getContext("2d");
+        canvas.width=canvas.clientWidth;
+        canvas.height=canvas.clientHeight;
+        cx=canvas.width/2;
+        cy=canvas.height/2;
+        playerZ=-25;
+        playerX=playerY=playerVX=playerVY=playerVZ=pitch=yaw=pitchV=yawV=0;
+        scale=600;
+        seedTimer=0;seedInterval=5,seedLife=100;gravity=.02;
+        seeds=new Array();
+        sparkPics=new Array();
+        // s="https://cantelope.org/NYE/";
+        s = "./NYE/";
+        for(i=1;i<=10;++i){
+            sparkPic=new Image();
+            sparkPic.src=s+"spark"+i+".png";
+            sparkPics.push(sparkPic);
+        }
+        sparks=new Array();
+        pow1=new Audio(s+"pow1.ogg");
+        pow2=new Audio(s+"pow2.ogg");
+        pow3=new Audio(s+"pow3.ogg");
+        pow4=new Audio(s+"pow4.ogg");
+        frames = 0;
+    }
+
+    function rasterizePoint(x,y,z){
+
+        var p,d;
+        x-=playerX;
+        y-=playerY;
+        z-=playerZ;
+        p=Math.atan2(x,z);
+        d=Math.sqrt(x*x+z*z);
+        x=Math.sin(p-yaw)*d;
+        z=Math.cos(p-yaw)*d;
+        p=Math.atan2(y,z);
+        d=Math.sqrt(y*y+z*z);
+        y=Math.sin(p-pitch)*d;
+        z=Math.cos(p-pitch)*d;
+        var rx1=-1000,ry1=1,rx2=1000,ry2=1,rx3=0,ry3=0,rx4=x,ry4=z,uc=(ry4-ry3)*(rx2-rx1)-(rx4-rx3)*(ry2-ry1);
+        if(!uc) return {x:0,y:0,d:-1};
+        var ua=((rx4-rx3)*(ry1-ry3)-(ry4-ry3)*(rx1-rx3))/uc;
+        var ub=((rx2-rx1)*(ry1-ry3)-(ry2-ry1)*(rx1-rx3))/uc;
+        if(!z)z=.000000001;
+        if(ua>0&&ua<1&&ub>0&&ub<1){
+            return {
+                x:cx+(rx1+ua*(rx2-rx1))*scale,
+                y:cy+y/z*scale,
+                d:Math.sqrt(x*x+y*y+z*z)
+            };
+        }else{
+            return {
+                x:cx+(rx1+ua*(rx2-rx1))*scale,
+                y:cy+y/z*scale,
+                d:-1
+            };
+        }
+    }
+
+    function spawnSeed(){
+
+        seed=new Object();
+        seed.x=-50+Math.random()*100;
+        seed.y=25;
+        seed.z=-50+Math.random()*100;
+        seed.vx=.1-Math.random()*.2;
+        seed.vy=-1.5;//*(1+Math.random()/2);
+        seed.vz=.1-Math.random()*.2;
+        seed.born=frames;
+        seeds.push(seed);
+    }
+
+    function splode(x,y,z){
+
+        t=5+parseInt(Math.random()*150);
+        sparkV=1+Math.random()*2.5;
+        type=parseInt(Math.random()*3);
+        switch(type){
+            case 0:
+                pic1=parseInt(Math.random()*10);
+                break;
+            case 1:
+                pic1=parseInt(Math.random()*10);
+                do{ pic2=parseInt(Math.random()*10); }while(pic2==pic1);
+                break;
+            case 2:
+                pic1=parseInt(Math.random()*10);
+                do{ pic2=parseInt(Math.random()*10); }while(pic2==pic1);
+                do{ pic3=parseInt(Math.random()*10); }while(pic3==pic1 || pic3==pic2);
+                break;
+        }
+        for(m=1;m<t;++m){
+            spark=new Object();
+            spark.x=x; spark.y=y; spark.z=z;
+            p1=pi*2*Math.random();
+            p2=pi*Math.random();
+            v=sparkV*(1+Math.random()/6)
+            spark.vx=Math.sin(p1)*Math.sin(p2)*v;
+            spark.vz=Math.cos(p1)*Math.sin(p2)*v;
+            spark.vy=Math.cos(p2)*v;
+            switch(type){
+                case 0: spark.img=sparkPics[pic1]; break;
+                case 1:
+                    spark.img=sparkPics[parseInt(Math.random()*2)?pic1:pic2];
+                    break;
+                case 2:
+                    switch(parseInt(Math.random()*3)){
+                        case 0: spark.img=sparkPics[pic1]; break;
+                        case 1: spark.img=sparkPics[pic2]; break;
+                        case 2: spark.img=sparkPics[pic3]; break;
+                    }
+                    break;
+            }
+            spark.radius=25+Math.random()*50;
+            spark.alpha=1;
+            spark.trail=new Array();
+            sparks.push(spark);
+        }
+        switch(parseInt(Math.random()*4)){
+            case 0:	pow=new Audio(s+"pow1.ogg"); break;
+            case 1:	pow=new Audio(s+"pow2.ogg"); break;
+            case 2:	pow=new Audio(s+"pow3.ogg"); break;
+            case 3:	pow=new Audio(s+"pow4.ogg"); break;
+        }
+        d=Math.sqrt((x-playerX)*(x-playerX)+(y-playerY)*(y-playerY)+(z-playerZ)*(z-playerZ));
+        pow.volume=1.5/(1+d/10);
+        pow.play();
+    }
+
+    function doLogic(){
+
+        if(seedTimer<frames){
+            seedTimer=frames+seedInterval*Math.random()*10;
+            spawnSeed();
+        }
+        for(i=0;i<seeds.length;++i){
+            seeds[i].vy+=gravity;
+            seeds[i].x+=seeds[i].vx;
+            seeds[i].y+=seeds[i].vy;
+            seeds[i].z+=seeds[i].vz;
+            if(frames-seeds[i].born>seedLife){
+                splode(seeds[i].x,seeds[i].y,seeds[i].z);
+                seeds.splice(i,1);
+            }
+        }
+        for(i=0;i<sparks.length;++i){
+            if(sparks[i].alpha>0 && sparks[i].radius>5){
+                sparks[i].alpha-=.01;
+                sparks[i].radius/=1.02;
+                sparks[i].vy+=gravity;
+                point=new Object();
+                point.x=sparks[i].x;
+                point.y=sparks[i].y;
+                point.z=sparks[i].z;
+                if(sparks[i].trail.length){
+                    x=sparks[i].trail[sparks[i].trail.length-1].x;
+                    y=sparks[i].trail[sparks[i].trail.length-1].y;
+                    z=sparks[i].trail[sparks[i].trail.length-1].z;
+                    d=((point.x-x)*(point.x-x)+(point.y-y)*(point.y-y)+(point.z-z)*(point.z-z));
+                    if(d>9){
+                        sparks[i].trail.push(point);
+                    }
+                }else{
+                    sparks[i].trail.push(point);
+                }
+                if(sparks[i].trail.length>5)sparks[i].trail.splice(0,1);
+                sparks[i].x+=sparks[i].vx;
+                sparks[i].y+=sparks[i].vy;
+                sparks[i].z+=sparks[i].vz;
+                sparks[i].vx/=1.075;
+                sparks[i].vy/=1.075;
+                sparks[i].vz/=1.075;
+            }else{
+                sparks.splice(i,1);
+            }
+        }
+        p=Math.atan2(playerX,playerZ);
+        d=Math.sqrt(playerX*playerX+playerZ*playerZ);
+        d+=Math.sin(frames/80)/1.25;
+        t=Math.sin(frames/200)/40;
+        playerX=Math.sin(p+t)*d;
+        playerZ=Math.cos(p+t)*d;
+        yaw=pi+p+t;
+    }
+
+    function rgb(col){
+
+        var r = parseInt((.5+Math.sin(col)*.5)*16);
+        var g = parseInt((.5+Math.cos(col)*.5)*16);
+        var b = parseInt((.5-Math.sin(col)*.5)*16);
+        return "#"+r.toString(16)+g.toString(16)+b.toString(16);
+    }
+
+    function draw(){
+
+        ctx.clearRect(0,0,cx*2,cy*2);
+
+        ctx.fillStyle="#ff8";
+        for(i=-100;i<100;i+=3){
+            for(j=-100;j<100;j+=4){
+                x=i;z=j;y=25;
+                point=rasterizePoint(x,y,z);
+                if(point.d!=-1){
+                    size=250/(1+point.d);
+                    d = Math.sqrt(x * x + z * z);
+                    a = 0.75 - Math.pow(d / 100, 6) * 0.75;
+                    if(a>0){
+                        ctx.globalAlpha = a;
+                        ctx.fillRect(point.x-size/2,point.y-size/2,size,size);
+                    }
+                }
+            }
+        }
+        ctx.globalAlpha=1;
+        for(i=0;i<seeds.length;++i){
+            point=rasterizePoint(seeds[i].x,seeds[i].y,seeds[i].z);
+            if(point.d!=-1){
+                size=200/(1+point.d);
+                ctx.fillRect(point.x-size/2,point.y-size/2,size,size);
+            }
+        }
+        point1=new Object();
+        for(i=0;i<sparks.length;++i){
+            point=rasterizePoint(sparks[i].x,sparks[i].y,sparks[i].z);
+            if(point.d!=-1){
+                size=sparks[i].radius*200/(1+point.d);
+                if(sparks[i].alpha<0)sparks[i].alpha=0;
+                if(sparks[i].trail.length){
+                    point1.x=point.x;
+                    point1.y=point.y;
+                    switch(sparks[i].img){
+                        case sparkPics[0]:ctx.strokeStyle="#f84";break;
+                        case sparkPics[1]:ctx.strokeStyle="#84f";break;
+                        case sparkPics[2]:ctx.strokeStyle="#8ff";break;
+                        case sparkPics[3]:ctx.strokeStyle="#fff";break;
+                        case sparkPics[4]:ctx.strokeStyle="#4f8";break;
+                        case sparkPics[5]:ctx.strokeStyle="#f44";break;
+                        case sparkPics[6]:ctx.strokeStyle="#f84";break;
+                        case sparkPics[7]:ctx.strokeStyle="#84f";break;
+                        case sparkPics[8]:ctx.strokeStyle="#fff";break;
+                        case sparkPics[9]:ctx.strokeStyle="#44f";break;
+                    }
+                    for(j=sparks[i].trail.length-1;j>=0;--j){
+                        point2=rasterizePoint(sparks[i].trail[j].x,sparks[i].trail[j].y,sparks[i].trail[j].z);
+                        if(point2.d!=-1){
+                            ctx.globalAlpha=j/sparks[i].trail.length*sparks[i].alpha/2;
+                            ctx.beginPath();
+                            ctx.moveTo(point1.x,point1.y);
+                            ctx.lineWidth=1+sparks[i].radius*10/(sparks[i].trail.length-j)/(1+point2.d);
+                            ctx.lineTo(point2.x,point2.y);
+                            ctx.stroke();
+                            point1.x=point2.x;
+                            point1.y=point2.y;
+                        }
+                    }
+                }
+                ctx.globalAlpha=sparks[i].alpha;
+                ctx.drawImage(sparks[i].img,point.x-size/2,point.y-size/2,size,size);
+            }
+        }
+    }
+
+    function frame(){
+
+        if(frames>100000){
+            seedTimer=0;
+            frames=0;
+        }
+        frames++;
+        draw();
+        doLogic();
+        requestAnimationFrame(frame);
+    }
+
+    window.addEventListener("resize",()=>{
+        canvas.width=canvas.clientWidth;
+        canvas.height=canvas.clientHeight;
+        cx=canvas.width/2;
+        cy=canvas.height/2;
+    });
+
+    // 设置动画持续时间为30秒
+    setTimeout(function() {
+        window.location.href = 'home.html';
+    }, 30000);
 
 
+    initVars();
+    frame();
 
-
-<!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-up"></span></div>
-
-<script src="js/jquery.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.paroller.min.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/tilt.jquery.min.js"></script>
-<script src="js/owl.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/knob.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/script.js"></script>
-
+</script>
+<script src="js/index.js"></script>
 </body>
 </html>
+
+
+
+
